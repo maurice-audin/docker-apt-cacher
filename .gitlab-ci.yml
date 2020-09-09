@@ -7,7 +7,7 @@ stages:
 Build apt-cacher-ng:
   stage: build
   script:
-    - docker build --no-cache -t registry.robespierre.lan:80/apt-cacher-ng .
+    - docker build --no-cache -t registry.robespierre.lan:5000/apt-cacher-ng .
 
 Push apt-cacher-ng:
   stage: push
