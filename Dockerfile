@@ -13,4 +13,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Run foreground for docker purpose, do not cache https repositories
-ENTRYPOINT ["apt-cacher-ng", "ForeGround=1", "PassThroughPattern=.*:443"]
+ENTRYPOINT ["apt-cacher-ng", "ForeGround=1", "PassThroughPattern=.*:443", "VerboseLog=1"]
