@@ -8,8 +8,10 @@ Build apt-cacher-ng:
   stage: build
   script:
     - docker build --no-cache -t registry.robespierre.lan:5000/apt-cacher-ng .
+    - docker tag registry.robespierre.lan:5000/apt-cacher-ng registry.robespierre.lan:5000/apt-cacher-ng:$(date +%Y-%m-%d)
 
 Push apt-cacher-ng:
   stage: push
   script:
     - docker push registry.robespierre.lan:5000/apt-cacher-ng
+    - docker push registry.robespierre.lan:5000/apt-cacher-ng:$(date +%Y-%m-%d)
